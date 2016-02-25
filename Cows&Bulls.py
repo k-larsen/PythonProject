@@ -19,6 +19,11 @@ def guessGame(number):
         for i in range(4):
             if guess[i] == str(number)[i]:
                 cow+=1
+            else:
+                for j in range(1,3):
+                    if guess[i] == str(number)[j]:
+                        bull+=1
+                        
 
         # put number into strings to compare indices
         print "COW: "+str(cow)
