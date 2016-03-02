@@ -13,9 +13,16 @@ for i in range(4):
     number += str(random.randint(0,9))
 print number
 
+def checkNumLength(guessNum):
+    print "You entered a number with the incorrect length"
+    guessNum = raw_input("Enter a number: ")
+    return guessNum
+
 # bulk of game --> actual guessing process
 def guessGame(number):
     guess = raw_input("Enter a 4 digit number: ")
+    if len(guess) > 4 or len(guess) < 4:
+        guess = checkNumLength(guess)
     editNumber = number
     guessCount = 1
     while str(number) != guess: # guess number doesn't equal random number
@@ -40,8 +47,10 @@ def guessGame(number):
 
         guessCount+=1 # total of guesses increases
         guess = raw_input("Enter a 4 digit number")
+        if len(guess) > 4 or len(guess) < 4:
+            guess = checkNumLength(guess)
         editNumber = number
-    print "You guessed correctly.\nTries Taken: "+str(guessCount)
+    print "You guessed correctly.\nTries Taken: "+str(guessCount) # once the number is guessed
 
 # play the game
 guessGame(number)
@@ -49,4 +58,4 @@ guessGame(number)
 
 
 """ TODO fix issue with input numbers != 4
-Delete print number at beginning """
+Ddelete print number at beginning """
