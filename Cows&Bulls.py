@@ -13,7 +13,8 @@ for i in range(4):
     number += str(random.randint(0,9))
 print number
 
-def checkNumLength(guessNum):
+# reprompt user for incorrect number length
+def badNumLength(guessNum):
     print "You entered a number with the incorrect length"
     guessNum = raw_input("Enter a number: ")
     return guessNum
@@ -21,8 +22,8 @@ def checkNumLength(guessNum):
 # bulk of game --> actual guessing process
 def guessGame(number):
     guess = raw_input("Enter a 4 digit number: ")
-    if len(guess) > 4 or len(guess) < 4:
-        guess = checkNumLength(guess)
+    while(len(guess) != 4):
+        guess = badNumLength(guess)
     editNumber = number
     guessCount = 1
     while str(number) != guess: # guess number doesn't equal random number
@@ -47,8 +48,8 @@ def guessGame(number):
 
         guessCount+=1 # total of guesses increases
         guess = raw_input("Enter a 4 digit number")
-        if len(guess) > 4 or len(guess) < 4:
-            guess = checkNumLength(guess)
+       while(len(guess) != 4):
+            guess = badNumLength(guess)
         editNumber = number
     print "YOU WIN!\nYou guessed correctly.\nTries Taken: "+str(guessCount) # once the number is guessed
 
