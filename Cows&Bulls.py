@@ -50,12 +50,7 @@ def guessGame(number):
         if len(guess) > 4 or len(guess) < 4:
             guess = checkNumLength(guess)
         editNumber = number
-    print "You guessed correctly.\nTries Taken: "+str(guessCount) # once the number is guessed
+    print "YOU WIN!\nYou guessed correctly.\nTries Taken: "+str(guessCount) # once the number is guessed
 
 # play the game
 guessGame(number)
-
-
-
-""" TODO fix issue with input numbers != 4
-Ddelete print number at beginning """
