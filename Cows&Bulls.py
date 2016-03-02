@@ -5,12 +5,14 @@ print "Welcome to Mastermind\n" \
       "You're objective is to guess a 4 digit number\n" \
       "For every number that is accurate to the hidden number a COW will be awarded,\n" \
       "For every number that is in the sequence but not in the right place will be awarded with a BULL\n"\
-      "Guess until you get the number correct\nGood Luck"
+      "Guess until you get the number correct\nGood Luck\n"
 
 number = ""
 # concatenate four integers to make number
 for i in range(4):
     number += str(random.randint(0,9))
+
+# ****** DELETE ONCE GAME IS FUNCTIONAL ********
 print number
 
 # reprompt user for incorrect number length
@@ -48,7 +50,7 @@ def guessGame(number):
 
         guessCount+=1 # total of guesses increases
         guess = raw_input("Enter a 4 digit number")
-       while(len(guess) != 4):
+        while(len(guess) != 4):
             guess = badNumLength(guess)
         editNumber = number
     print "YOU WIN!\nYou guessed correctly.\nTries Taken: "+str(guessCount) # once the number is guessed
