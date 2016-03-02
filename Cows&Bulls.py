@@ -12,9 +12,6 @@ number = ""
 for i in range(4):
     number += str(random.randint(0,9))
 
-# ****** DELETE ONCE GAME IS FUNCTIONAL ********
-print number
-
 # reprompt user for incorrect number length
 def badNumLength(guessNum):
     print "You entered a number with the incorrect length"
